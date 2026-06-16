@@ -1,0 +1,12 @@
+/* Estado inicial de la foto */
+.foto-zoom {
+    /* Controla la velocidad y suavidad del efecto (0.4 segundos) */
+    transition: transform 0.4s ease-in-out; 
+    display: block;
+}
+
+/* Cuando el usuario pasa el mouse sobre el contenedor... */
+.photo-container:hover .foto-zoom {
+    /* Escala la imagen un 12% más grande de su tamaño original */
+    transform: scale(1.12); 
+}
