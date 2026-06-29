@@ -15,9 +15,6 @@ header.innerHTML = `
                         <a class="nav-link fw-bold text-dark" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-primary fw-semibold" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link text-secondary" href="proyectos.html">Proyectos</a>
                     </li>
                 </ul>
@@ -39,6 +36,24 @@ footer.innerHTML = `
     </footer>`;
 
 document.body.appendChild(footer);
+
+function openModal(modalId, caption) {
+  let modal = document.getElementById(modalId);
+  modal.style.display = "flex";
+  modal.classList.add("show");
+  let message = modal.querySelector(".caption");
+  message.innerText = caption;
+}
+
+function closeModal(modalId) {
+  let modal = document.getElementById(modalId);
+  modal.classList.remove("show");
+  setTimeout(function () {
+    modal.style.display = "none";
+    modal.querySelector(".caption").innerText = "";
+  }, 300);
+}
+
 
 
  
