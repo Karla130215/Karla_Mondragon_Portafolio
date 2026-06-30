@@ -202,6 +202,14 @@ p {
   margin-bottom: 10px;
   
 }
+.letras3{
+    font-family: "Fantasy";
+  font-size: 20px;
+  font-weight: bold;
+  color: #61104D; /* Verde principal */
+  margin-bottom: 10px;
+  
+}
 
 
 .container div {
@@ -213,4 +221,28 @@ p {
   padding: 10px;
   text-align: center;  
   font-size: 30px;
+}
+.boton-whatsapp {
+  background-color: #25D366; /* El verde oficial de WhatsApp */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none; /* Quita la línea de abajo del enlace */
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border-radius: 5px; /* Bordes redondeados */
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+/* Efecto visual cuando pasas el cursor por encima */
+.boton-whatsapp:hover {
+  background-color: #128C7E; /* Un verde un poco más oscuro */
+}
+
+
+
+/* EFECTO AL PASAR EL MOUSE */
+.mi-menu a:hover {
+  background-color: #000000;  /* El fondo se pinta de verde (puedes usar el color que quieras) */
+  color: white;               /* El texto cambia a blanco para que se lea bien */
 }
