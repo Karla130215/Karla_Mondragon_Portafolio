@@ -159,6 +159,7 @@ h1 {
 }
 .titulo {
   font-family: "Sofia", sans-serif;
+  color: #ffffff;
 }
 
 
@@ -195,10 +196,9 @@ p {
 }
 
 .letras2 {
-    font-family: "Sofia", sans-serif;
-  font-size: 20px;
+font-family: 'Great Vibes', cursive;  font-size: 15px;
   font-weight: bold;
-  color: #61104D; /* Verde principal */
+  color: #000000; /* Verde principal */
   margin-bottom: 10px;
   
 }
@@ -223,7 +223,7 @@ p {
   font-size: 30px;
 }
 .boton-whatsapp {
-  background-color: #25D366; /* El verde oficial de WhatsApp */
+  background-color: #2994D9; /* El verde oficial de WhatsApp */
   color: white;
   padding: 10px 20px;
   text-decoration: none; /* Quita la línea de abajo del enlace */
@@ -240,9 +240,53 @@ p {
 }
 
 
+/* Estado inicial de tu foto */
+.img-interactiva {
+  cursor: pointer;
+  border-radius: var(--border-radius-main);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s ease, 
+              filter 0.4s ease;
+}
 
-/* EFECTO AL PASAR EL MOUSE */
-.mi-menu a:hover {
-  background-color: #000000;  /* El fondo se pinta de verde (puedes usar el color que quieras) */
-  color: white;               /* El texto cambia a blanco para que se lea bien */
+/* Efecto al pasar el mouse (Hover) */
+.img-interactiva:hover {
+  transform: translateY(-10px) scale(1.03); /* Flota hacia arriba y se agranda un poquito */
+  box-shadow: 0 20px 35px rgba(45, 206, 112, 0.3); /* Sombra verde usando tu variable primary-green */
+  filter: brightness(1.05); /* Le da un ligero brillo */
+}
+
+/* Clase que meteremos con JavaScript para el clic */
+.img-animada-clic {
+  animation: popYgiro 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* La magia de la animación: Se estira un poco y da una vuelta completa */
+@keyframes popYgiro {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(0.9) rotate(-10deg); /* Se encoge tantito como tomando impulso */
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg); /* Se estira en el aire */
+  }
+  100% {
+    transform: scale(1) rotate(360deg); /* Cae en su lugar perfecta */
+  }
+}
+
+.gif-chiquito {
+  width: 100%;
+  max-width: 160px;  
+  height: auto;
+  
+  /* ESTO ES LO QUE LO CENTRA: */
+  display: block;     /* Convierte la imagen en un bloque que ocupa su propio renglón */
+  margin-left: auto;  /* Empuja el GIF desde la izquierda al centro */
+  margin-right: auto; /* Empuja el GIF desde la derecha al centro */
+  margin-top: 15px;   /* Espacio opcional arriba */
+  margin-bottom: 15px;/* Espacio opcional abajo */
 }

@@ -3,37 +3,58 @@ const header = document.createElement('header');
 header.className = 'sticky-top shadow-sm';
 
 header.innerHTML = `
-   <nav class="navbar navbar-expand-lg navbar-white bg-white border-bottom py-3 shadow-sm">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav gap-3">
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-dark" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-secondary" href="proyectos.html">Proyectos</a>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <!-- Este es el único que debe decir tu nombre -->
+        <h1 class="titulo">Desarrolladora Full Stack</h1>
+        
+       
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 `;
 
 
 document.body.prepend(header);
 
 const footer = document.createElement('footer');
-footer.className = 'bg-white border-top py-4 mt-5 text-center';
+footer.className = 'bg-dark border-top py-4 mt-5 text-center';
 footer.innerHTML = `
-        <div class="container text-muted">
-            <p class="mb-1 fw-medium" style="font-size: 0.9rem;">&copy; 2026 - Karla Elizabeth Gonzalez Mondragon</p>
-            <p class="small mb-0 text-secondary">Desarrolladora Full Stack | Java & JavaScript</p>
-        </div>
-    </footer>`;
+       <footer class="bg-dark text-white text-center py-4 mt-5">
+                <div class="container">
+                    <p class="mb-3">&copy; 2026 Karla | Desarrolladora Full Stack JR</p>
+                    
+                    <div class="d-flex justify-content-center gap-3 fs-3">
+                        
+                        <a href="https://www.linkedin.com/in/karladesarrollofullstack/" target="_blank" class="text-white enlace-icono">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        
+                        <a href="https://github.com/Karla130215" target="_blank" class="text-white enlace-icono">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        
+                        <a href="https://wa.me/525564973947" target="_blank" class="text-white enlace-icono">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        
+                        <a href="mailto:elizabe130215@email.com" class="text-white enlace-icono">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+            </footer>`;
 
 document.body.appendChild(footer);
 
@@ -55,5 +76,21 @@ function closeModal(modalId) {
 }
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    // Buscamos tu foto por el ID que le pusimos en el HTML
+    const fotoPerfil = document.getElementById("fotoPerfil");
 
+    if (fotoPerfil) {
+        fotoPerfil.addEventListener("click", () => {
+            // Añadimos la clase que contiene la animación @keyframes
+            fotoPerfil.classList.add("img-animada-clic");
+
+            // Quitamos la clase cuando termine la animación (800 milisegundos)
+            // para que se pueda repetir el efecto en el siguiente clic
+            setTimeout(() => {
+                fotoPerfil.classList.remove("img-animada-clic");
+            }, 800);
+        });
+    }
+});
  
