@@ -1,0 +1,292 @@
+/* ==========================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================== */
+:root {
+  --primary-green: #2dce70;
+  --bg-modal: rgba(0, 0, 0, 0.85);
+  --border-radius-main: 8px;
+  --transition-fast: 0.3s ease;
+  --transition-normal: 0.5s ease;
+  margin-inline: 35px
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding: 30px 20px;
+  color: #333;
+}
+
+/* Clases sueltas optimizadas */
+.mi-div {
+  background-color: var(--primary-green);
+}
+
+.mi-foto {
+  border-radius: var(--border-radius-main);
+}
+
+/* ==========================================
+   2. GALERÍA CON CSS GRID (Más limpio que Flexbox)
+   ========================================== */
+.gallery {
+  display: grid;
+  /* Crea columnas automáticas de mínimo 250px que se adaptan solas */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* Controla el espacio entre tarjetas sin usar márgenes */
+  padding: 0 20px 40px 20px;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--border-radius-main);
+  overflow: hidden; /* Evita que la imagen se salga al hacer zoom */
+  transition: transform var(--transition-fast);
+}
+
+/* Forzamos a que las imágenes internas se adapten perfectamente a la tarjeta */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05); /* Un zoom de 1.05 es más sutil y elegante que 1.1 */
+}
+
+/* ==========================================
+   3. MODAL MEJORADO (Animaciones fluidas)
+   ========================================== */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-modal);
+  
+  /* Centrado perfecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Estado inicial oculto pero animable */
+  opacity: 0;
+  pointer-events: none; 
+  transition: opacity var(--transition-normal);
+}
+
+/* Cuando el modal tiene la clase .show */
+.modal.show {
+  opacity: 1;
+  pointer-events: auto; /* Permite hacer clic cuando es visible */
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: var(--border-radius-main);
+  overflow: hidden;
+  
+  /* Efecto de escala suave al abrir */
+  transform: scale(0.7);
+  transition: transform var(--transition-normal);
+}
+
+/* Animación del contenido cuando el modal se abre */
+.modal.show .modal-content {
+  transform: scale(1);
+}
+
+/* Botón de cerrar */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 300; 
+  cursor: pointer;
+  line-height: 1;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+  z-index: 1010;
+}
+
+.close:hover {
+  transform: scale(1.2);
+  color: var(--primary-green);
+}
+
+/* Subtítulo de la imagen */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 15px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7)); /* Degradado para legibilidad */
+}
+
+/* ==========================================
+   4. SECCIÓN NUEVA: BLOQUE VERTICAL (FLEX COLUMN)
+   ========================================== */
+
+/* Cambiamos el nombre para que no choque con otros contenedores */
+.proyecto-flex-col {
+  display: flex;
+  flex-direction: column;
+  background-color: DodgerBlue;
+  padding: 10px; /* Un pequeño espaciado interno para el fondo azul */
+  border-radius: 8px; /* Opcional: para que combine con tus fotos redondas */
+}
+.titulo {
+  font-family: "Sofia", sans-serif;
+  color: #ffffff;
+}
+
+
+/* Aplicamos estilos SOLO a los divs que estén DENTRO de este contenedor específico */
+.proyecto-flex-col > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  
+  padding: 10px;
+  text-align: center;  
+  font-size: 30px;
+  color: #333; /* Color de texto oscuro para que se note el número */
+  border-radius: 4px;
+}
+p {
+  font-family: Tahoma, Verdana, sans-serif;
+}
+.grande {
+    font-family: "Sofia", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #0E7D10; /* Verde principal */
+  margin-bottom: 10px;
+  
+}
+.letras {
+    font-family: "Sofia", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #2994D9; /* Verde principal */
+  margin-bottom: 10px;
+  
+}
+
+.letras2 {
+font-family: 'Great Vibes', cursive;  font-size: 15px;
+  font-weight: bold;
+  color: #000000; /* Verde principal */
+  margin-bottom: 10px;
+  
+}
+.letras3{
+    font-family: "Fantasy";
+  font-size: 20px;
+  font-weight: bold;
+  color: #61104D; /* Verde principal */
+  margin-bottom: 10px;
+  
+}
+
+
+.container div {
+      font-family: "Sofia", sans-serif;
+
+ 
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;  
+  font-size: 30px;
+}
+.boton-whatsapp {
+  background-color: #2994D9; /* El verde oficial de WhatsApp */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none; /* Quita la línea de abajo del enlace */
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border-radius: 5px; /* Bordes redondeados */
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+/* Efecto visual cuando pasas el cursor por encima */
+.boton-whatsapp:hover {
+  background-color: #128C7E; /* Un verde un poco más oscuro */
+}
+
+
+/* Estado inicial de tu foto */
+.img-interactiva {
+  cursor: pointer;
+  border-radius: var(--border-radius-main);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s ease, 
+              filter 0.4s ease;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.img-interactiva:hover {
+  transform: translateY(-10px) scale(1.03); /* Flota hacia arriba y se agranda un poquito */
+  box-shadow: 0 20px 35px rgba(45, 206, 112, 0.3); /* Sombra verde usando tu variable primary-green */
+  filter: brightness(1.05); /* Le da un ligero brillo */
+}
+
+/* Clase que meteremos con JavaScript para el clic */
+.img-animada-clic {
+  animation: popYgiro 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* La magia de la animación: Se estira un poco y da una vuelta completa */
+@keyframes popYgiro {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(0.9) rotate(-10deg); /* Se encoge tantito como tomando impulso */
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg); /* Se estira en el aire */
+  }
+  100% {
+    transform: scale(1) rotate(360deg); /* Cae en su lugar perfecta */
+  }
+}
+
+.gif-chiquito {
+  width: 100%;
+  max-width: 160px;  
+  height: auto;
+  
+  /* ESTO ES LO QUE LO CENTRA: */
+  display: block;     /* Convierte la imagen en un bloque que ocupa su propio renglón */
+  margin-left: auto;  /* Empuja el GIF desde la izquierda al centro */
+  margin-right: auto; /* Empuja el GIF desde la derecha al centro */
+  margin-top: 15px;   /* Espacio opcional arriba */
+  margin-bottom: 15px;/* Espacio opcional abajo */
+}
