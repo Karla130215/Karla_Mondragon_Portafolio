@@ -318,3 +318,7 @@ font-family: 'Great Vibes', cursive;  font-size: 15px;
   text-align: center;
   border-radius: 8px;
 }
+footer {
+  padding: 15px 0; /* Reduce el espacio arriba y abajo (ajusta el valor según tu gusto) */
+  min-height: auto; /* Si tenía una altura fija, esto la libera */
+}

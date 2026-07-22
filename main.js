@@ -28,43 +28,31 @@ header.innerHTML = `
 document.body.prepend(header);
 
 const footer = document.createElement('footer');
-footer.className = 'bg-dark border-top py-4 mt-5 text-center';
+// Reducimos el padding a py-2 y quitamos el footer duplicado del innerHTML
+footer.className = 'bg-dark text-white text-center py-2 mt-5 border-top';
+
 footer.innerHTML = `
-       <footer class="bg-dark text-white text-center py-4 mt-5">
-                <div class="container">
-                    <p class="mb-3">&copy; 2026 Karla | Desarrolladora Full Stack JR</p>
-                    
-                    <div class="d-flex justify-content-center gap-3 fs-3">
-                        
-                        <a href="https://www.linkedin.com/in/karladesarrollofullstack/" target="_blank" class="text-white enlace-icono">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        
-                        <a href="https://github.com/Karla130215" target="_blank" class="text-white enlace-icono">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        
-                        <a href="https://wa.me/525564973947" target="_blank" class="text-white enlace-icono">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        
-                        <a href="mailto:elizabe130215@email.com" class="text-white enlace-icono">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
-                        
-                    </div>
-                </div>
-            </footer>`;
+    <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center">
+        <p class="mb-2 mb-sm-0">&copy; 2026 Karla | Desarrolladora Full Stack JR</p>
+        
+        <div class="d-flex justify-content-center gap-3 fs-5">
+            <a href="https://www.linkedin.com/in/karladesarrollofullstack/" target="_blank" class="text-white enlace-icono">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Karla130215" target="_blank" class="text-white enlace-icono">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://wa.me/525564973947" target="_blank" class="text-white enlace-icono">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="mailto:elizabe130215@email.com" class="text-white enlace-icono">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+`;
 
 document.body.appendChild(footer);
-
-function openModal(modalId, caption) {
-  let modal = document.getElementById(modalId);
-  modal.style.display = "flex";
-  modal.classList.add("show");
-  let message = modal.querySelector(".caption");
-  message.innerText = caption;
-}
 
 function closeModal(modalId) {
   let modal = document.getElementById(modalId);
